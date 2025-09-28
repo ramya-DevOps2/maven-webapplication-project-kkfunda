@@ -1,102 +1,165 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ page import="java.net.*" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>KK FUNDA Home Page</title>
-<link href="images/kkfunda.jpg" rel="icon">
-<!-- Bootstrap CDN -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-<style>
-    body {
-        background: #f9f9f9;
-        font-family: Arial, sans-serif;
-    }
-    header {
-        background: linear-gradient(90deg, #007bff, #00c6ff);
-        color: white;
-        padding: 20px;
-        text-align: center;
-    }
-    h1, h3 {
-        margin: 10px 0;
-    }
-    .info-card {
-        background: white;
-        border-radius: 10px;
-        box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
-        padding: 20px;
-        margin: 20px auto;
-        max-width: 700px;
-    }
-    footer {
-        margin-top: 30px;
-        background: #222;
-        color: white;
-        padding: 15px;
-        text-align: center;
-    }
-    footer a {
-        color: #00c6ff;
-        text-decoration: none;
-    }
-</style>
+    <meta charset="UTF-8">
+    <title>RAMYA Clothing brand - Sew & Sale</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #444;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .section {
+            padding: 40px;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h2 {
+            color: #222;
+            margin-bottom: 20px;
+        }
+
+        .categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .category {
+            flex: 1 1 250px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .category img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .category h3 {
+            margin: 15px;
+        }
+
+        .category p {
+            margin: 0 15px 15px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
 
-<header>
-    <h1>🚀 Welcome to KK FUNDA SRE Portal 🚀</h1>
-    <h3>Training | Development | Consulting</h3>
-</header>
+    <header>
+        <h1>Your Clothing Brand</h1>
+        <p>We Sew & Sell Stylish Clothes for Everyone</p>
+    </header>
 
-<div class="container">
+    <nav>
+        <a href="#men">Men</a>
+        <a href="#women">Women</a>
+        <a href="#kids">Kids</a>
+        <a href="#custom">Custom Sewing</a>
+    </nav>
 
-    <!-- Server Info -->
-    <div class="info-card">
-        <h3>🌐 Server Side Information</h3>
-        <hr>
-        <%
-            InetAddress inetAddress = InetAddress.getLocalHost();
-            String ip = inetAddress.getHostAddress();
-            out.println("<p><b>Server Host Name:</b> " + inetAddress.getHostName() + "</p>");
-            out.println("<p><b>Server IP Address:</b> " + ip + "</p>");
-        %>
+    <div class="section" id="men">
+        <h2>Men's Collection</h2>
+        <div class="categories">
+            <div class="category">
+                <img src="https://via.placeholder.com/300x200?text=Men+Shirts" alt="Men Shirts">
+                <h3>Shirts</h3>
+                <p>Formal and casual shirts in all sizes and colors.</p>
+            </div>
+            <div class="category">
+                <img src="https://via.placeholder.com/300x200?text=Men+Trousers" alt="Men Trousers">
+                <h3>Trousers</h3>
+                <p>High-quality tailored pants for office and casual wear.</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Client Info -->
-    <div class="info-card">
-        <h3>💻 Client Side Information</h3>
-        <hr>
-        <p><b>Client IP Address:</b> <%= request.getRemoteAddr() %></p>
-        <p><b>Client Host Name:</b> <%= request.getRemoteHost() %></p>
+    <div class="section" id="women">
+        <h2>Women's Collection</h2>
+        <div class="categories">
+            <div class="category">
+                <img src="https://via.placeholder.com/300x200?text=Women+Dresses" alt="Women Dresses">
+                <h3>Dresses</h3>
+                <p>Trendy and traditional dresses for all occasions.</p>
+            </div>
+            <div class="category">
+                <img src="https://via.placeholder.com/300x200?text=Women+Tops" alt="Women Tops">
+                <h3>Tops</h3>
+                <p>Casual and party tops in all styles and sizes.</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Contact Info -->
-    <div class="info-card text-center">
-        <img src="images/kkfunda.jpg" alt="KK FUNDA Logo" width="120" class="mb-3 rounded-circle shadow">
-        <h4>KK FUNDA</h4>
-        <p><b>Address:</b> Martha Halli, Bangalore</p>
-        <p><b>Phone:</b> +91-9676831734</p>
-        <p><b>Email:</b> <a href="mailto:kkeducationblr@gmail.com">kkeducationblr@gmail.com</a></p>
-        <a href="mailto:kkeducation@gmail.com" class="btn btn-primary mt-2">📧 Mail to KK FUNDA</a>
+    <div class="section" id="kids">
+        <h2>Kids' Wear</h2>
+        <div class="categories">
+            <div class="category">
+                <img src="https://via.placeholder.com/300x200?text=Kids+Outfits" alt="Kids Outfits">
+                <h3>Outfits</h3>
+                <p>Colorful and comfortable clothes for boys and girls.</p>
+            </div>
+            <div class="category">
+                <img src="https://via.placeholder.com/300x200?text=School+Uniforms" alt="School Uniforms">
+                <h3>School Uniforms</h3>
+                <p>Tailored school uniforms for all sizes and designs.</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Service Links -->
-    <div class="info-card text-center">
-        <h4>⚙️ Our Services</h4>
-        <p><a href="services/employee/getEmployeeDetails" class="btn btn-success">Get Employee Details</a></p>
+    <div class="section" id="custom">
+        <h2>Custom Sewing Services</h2>
+        <p>We offer professional tailoring and custom clothing services. Bring your fabric or choose from our stock. Stitching available for:</p>
+        <ul>
+            <li>Traditional & ethnic wear</li>
+            <li>Bridal & party dresses</li>
+            <li>Corporate uniforms</li>
+            <li>Bulk orders for events</li>
+        </ul>
+        <p><strong>Contact us today to get a quote!</strong></p>
     </div>
 
-</div>
-
-<footer>
-    <p>© 2024 KK FUNDA Training & Development Center</p>
-    <p><small>Powered by <a href="https://google.com/">KK FUNDA</a></small></p>
-</footer>
-
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <footer>
+        &copy; 2025 Your Clothing Brand | All Rights Reserved
+    </footer>
 
 </body>
 </html>
+
