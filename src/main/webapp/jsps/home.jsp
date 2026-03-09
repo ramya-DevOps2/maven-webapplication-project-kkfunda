@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>RAMYA Clothing brand - Sew & Sale</title>
+    <title>RAMYA New Clothing brand - Sew & Sale</title>
     <style>
         body {
             margin: 0;
