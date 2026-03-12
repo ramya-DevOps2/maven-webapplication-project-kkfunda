@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title> KR KR Clothing Store</title>
+<title> vizag Clothing Store</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
